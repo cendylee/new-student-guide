@@ -72,6 +72,6 @@ export default {
     }
 }
 .hide {
-    transform: translateX(-300px);
+    transform: translateX(-100%);
 }
 </style>

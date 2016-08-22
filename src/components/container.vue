@@ -39,8 +39,11 @@ export default {
                 this.show();
             });
         },
+        containerHide() {
+            this.hide();
+        },
         reset() {
-            this.stat = 'hide';
+            this.hide();
         }
     }
 }
@@ -56,11 +59,13 @@ export default {
         border-radius: 10px;
         transition: all .3s ease;
         overflow-y: scroll;
+        overflow-x: hidden;
         box-sizing: border-box;
+        z-index: 1;
     }
     .content-container.hide {
         transition: transform 1s ease;
-        transition-delay: .2s;
+        transition-delay: .1s;
         transform: translateX(-4000px)
     }
 </style>

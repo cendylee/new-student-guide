@@ -5,6 +5,7 @@
       <navigation></navigation>
       <sub-nav></sub-nav>
       <container></container>
+      <map></map>
       <foot></foot>
   </div>
 </template>
@@ -14,6 +15,7 @@ import warning from './components/warning.vue';
 import navigation from './components/navigation.vue';
 import subNav from './components/subNav.vue';
 import container from './components/container.vue';
+import map from './components/map.vue';
 import foot from './components/foot.vue';
 export default {
     components: {
@@ -21,6 +23,7 @@ export default {
         navigation,
         subNav,
         container,
+        map,
         foot
     },
     data () {
@@ -46,8 +49,23 @@ export default {
         subNavShow(currentItem) {
             this.$broadcast('subNavShow', currentItem);
         },
+        subNavHide() {
+            this.$broadcast('subNavHide');
+        },
         containerShow(textId) {
             this.$broadcast('containerShow', textId);
+        },
+        containerHide() {
+            this.$broadcast('containerHide');
+        },
+        showMap() {
+            this.$broadcast('showMap');
+        },
+        hideMap() {
+            this.$broadcast('hideMap');
+        },
+        hideFoot() {
+            this.$broadcast('hideFoot');
         }
     }
 }
@@ -59,7 +77,7 @@ export default {
 
     #app {
         font-family: 'kaiti';
-
+        overflow: hidden;
         width: 100%;
         background-image: url('./images/whut_logo.png'), url('./images/index.jpg');
         background-repeat: no-repeat, no-repeat;
